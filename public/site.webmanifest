@@ -1,0 +1,10 @@
+{
+  "name": "Advocate Website",
+  "short_name": "Advocate",
+  "description": "Professional information for Advocate Shrinivas Talawar in Chhatrapati Sambhajinagar.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F7F3",
+  "theme_color": "#0B172A",
+  "lang": "en-IN"
+}
