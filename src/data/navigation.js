@@ -1,8 +1,14 @@
 import { practiceAreas } from "@/data/practiceAreas";
+import { getPublishedOfficeLocations } from "@/data/officeLocation";
 
 const practiceAreaLinks = practiceAreas.map((practiceArea) => ({
     label: practiceArea.menuTitle || practiceArea.title,
     href: `/practice-areas/${practiceArea.slug}`,
+}));
+
+const officeLinks = getPublishedOfficeLocations().map((office) => ({
+    label: office.shortName || office.name,
+    href: `/offices/${office.slug}`,
 }));
 
 export const mainNavigation = [
@@ -24,6 +30,17 @@ export const mainNavigation = [
     },
     {
         id: 4,
+        label: "Offices",
+        href: "/offices",
+        children: officeLinks,
+    },
+    {
+        id: 5,
+        label: "Gallery",
+        href: "/gallery",
+    },
+    {
+        id: 6,
         label: "Contact",
         href: "/contact",
     },
@@ -36,11 +53,15 @@ export const footerNavigation = {
             href: "/about",
         },
         {
-            label: "Practice Areas",
-            href: "/practice-areas",
+            label: "Offices",
+            href: "/offices",
         },
         {
-            label: "Office Information",
+            label: "Gallery",
+            href: "/gallery",
+        },
+        {
+            label: "Contact",
             href: "/contact",
         },
     ],
@@ -100,6 +121,16 @@ export const mobileNavigation = [
     {
         label: "Practice Areas",
         href: "/practice-areas",
+        children: practiceAreaLinks,
+    },
+    {
+        label: "Offices",
+        href: "/offices",
+        children: officeLinks,
+    },
+    {
+        label: "Gallery",
+        href: "/gallery",
     },
     {
         label: "Contact",

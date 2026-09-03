@@ -1,9 +1,12 @@
 import AppointmentSection from "@/components/home/AppointmentSection";
+import GalleryPreviewSection from "@/components/home/GalleryPreviewSection";
 import HeroSection from "@/components/home/HeroSection";
 import IntroductionSection from "@/components/home/IntroductionSection";
 import LocationSection from "@/components/home/LocationSection";
+import OfficePreviewSection from "@/components/home/OfficePreviewSection";
 import PracticeAreasSection from "@/components/home/PracticeAreasSection";
 import ProfessionalApproach from "@/components/home/ProfessionalApproach";
+import ServiceHighlightsSection from "@/components/home/ServiceHighlightsSection";
 import FAQSchema from "@/components/seo/FAQSchema";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -48,7 +51,10 @@ export default function HomePage() {
       <HeroSection />
       <IntroductionSection />
       <PracticeAreasSection />
+      <ServiceHighlightsSection />
       <ProfessionalApproach />
+      <OfficePreviewSection />
+      <GalleryPreviewSection />
       <AppointmentSection />
       <LocationSection />
       <FAQSection />

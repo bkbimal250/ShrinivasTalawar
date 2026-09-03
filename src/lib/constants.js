@@ -32,7 +32,7 @@ export const DEFAULT_KEYWORDS = [
     "POCSO case advocate in Chhatrapati Sambhajinagar",
 ];
 
-export const DEFAULT_OG_IMAGE = "/images/og-cover.webp";
+export const DEFAULT_OG_IMAGE = "/images/gallery/og-cover.webp";
 
 export const CONTACT = {
     phoneDisplay: "+91 98220 51707",

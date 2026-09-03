@@ -42,7 +42,7 @@ export default function SectionHeading({
         <p
           className={`section-description ${
             isCentered ? "section-description-center" : ""
-          } ${isDark ? "text-light" : ""}`.trim()}
+          } ${isDark ? "gold-line-center" : ""}`.trim()}
         >
           {description}
         </p>

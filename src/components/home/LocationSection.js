@@ -12,12 +12,6 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import advocate from "@/data/advocate";
 
 export default function LocationSection() {
-  const mapQuery = encodeURIComponent(
-    advocate.address.fullAddress
-  );
-
-  const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-
   return (
     <section
       className="section section-background"
@@ -51,7 +45,7 @@ export default function LocationSection() {
             }}
           >
             <iframe
-              src={mapEmbedUrl}
+              src={advocate.address.googleMapsEmbedUrl}
               title="Office location of Advocate Shrinivas Talawar"
               width="100%"
               height="100%"

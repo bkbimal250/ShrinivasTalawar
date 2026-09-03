@@ -22,13 +22,6 @@ export const metadata = contactMetadata;
 export default function ContactPage() {
   const contactPageSchema = createContactPageSchema();
 
-  const mapQuery = encodeURIComponent(
-    advocate.address.fullAddress
-  );
-
-  const mapEmbedUrl =
-    `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-
   return (
     <main id="main-content">
       <script
@@ -266,7 +259,7 @@ export default function ContactPage() {
             }}
           >
             <iframe
-              src={mapEmbedUrl}
+              src={advocate.address.googleMapsEmbedUrl}
               title="Office location of Advocate Shrinivas Talawar"
               width="100%"
               height="500"

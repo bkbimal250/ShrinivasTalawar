@@ -70,7 +70,10 @@ export const advocate = {
             "Surya Apartment, Samadhan Colony, Padampura, Chhatrapati Sambhajinagar - 431001",
 
         googleMapsUrl:
-            "https://www.google.com/maps/search/?api=1&query=Surya+Apartment+Samadhan+Colony+Padampura+Chhatrapati+Sambhajinagar+Maharashtra+431001",
+            "https://maps.app.goo.gl/UBzr4GU5WJA2C7Mq5",
+
+        googleMapsEmbedUrl:
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.314041229414!2d75.31818919999999!3d19.868956999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9902591d124b%3A0x1b0a75344e431dca!2sAdvocate%20Shrinivas%20Talawar!5e0!3m2!1sen!2sin!4v1788438745346!5m2!1sen!2sin",
     },
 
     serviceLocations: [
