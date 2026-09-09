@@ -52,40 +52,11 @@ export default function PracticeAreaHeader({
     <header
       className="section-dark legal-pattern"
       style={{
-        position: "relative",
-        overflow: "hidden",
+        borderBottom: "1px solid rgba(182, 144, 80, 0.28)",
       }}
     >
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          top: "-140px",
-          right: "-110px",
-          width: "380px",
-          height: "380px",
-          border: "1px solid rgba(201, 169, 110, 0.18)",
-          borderRadius: "50%",
-        }}
-      />
-
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          right: "40px",
-          bottom: "-190px",
-          width: "340px",
-          height: "340px",
-          border: "1px solid rgba(201, 169, 110, 0.1)",
-          borderRadius: "50%",
-        }}
-      />
-
       <Container
         style={{
-          position: "relative",
-          zIndex: 1,
           paddingTop: "var(--space-10)",
           paddingBottom: "var(--space-20)",
         }}

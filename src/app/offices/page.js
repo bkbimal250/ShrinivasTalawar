@@ -20,7 +20,7 @@ import { serializeSchema } from "@/lib/schema";
 export const metadata = createMetadata({
   title: "Office Locations",
   description:
-    "View verified office address, appointment availability, contact details and location information for Advocate Shrinivas Talawar.",
+    "View confirmed office addresses, appointment availability, contact details and location information for Advocate Shrinivas Talawar in Chhatrapati Sambhajinagar, Navi Mumbai and Pimpri-Chinchwad.",
   pathname: "/offices",
   keywords: [
     "Advocate Shrinivas Talawar office",
@@ -31,6 +31,10 @@ export const metadata = createMetadata({
     "civil advocate office Aurangabad",
     "criminal lawyer office Aurangabad",
     "family court advocate Aurangabad",
+    "advocate office Navi Mumbai",
+    "lawyer office Sanpada",
+    "advocate office Pimpri-Chinchwad",
+    "lawyer office Tathawade",
   ],
 });
 

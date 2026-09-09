@@ -278,8 +278,8 @@ export const officeLocations = [
     postalCode: "400705",
 
     address: {
-      flatNumber: "Office No. 503",
-      floor: "5th Floor",
+      flatNumber: "Office No. 907",
+      floor: "9th Floor",
       building: "Bhumiraj Costarica, Plot No- 1 & 2",
       street: "Sector 18, Sanpada",
       locality: "Navi Mumbai",
@@ -287,13 +287,13 @@ export const officeLocations = [
       landmark: "Bhumiraj Costarica, Plot No- 1& 2, Sector 18, Sanpada",
 
       streetAddress:
-        "5th Floor, Office No. 503, Bhumiraj Costarica, Plot No- 1 & 2, Sector 18, Sanpada",
+        "9th Floor, Office No. 907, Bhumiraj Costarica, Plot No- 1 & 2, Sector 18, Sanpada",
 
       shortAddress:
-        "5th Floor, Office No. 503, Bhumiraj Costarica, Sector 18, Sanpada, Navi Mumbai - 400705",
+        "9th Floor, Office No. 907, Bhumiraj Costarica, Sector 18, Sanpada, Navi Mumbai - 400705",
 
       fullAddress:
-        "5th Floor, Office No. 503, Bhumiraj Costarica, Plot No- 1 & 2, Sector 18, Sanpada, Navi Mumbai, Maharashtra - 400705",
+        "9th Floor, Office No. 907, Bhumiraj Costarica, Plot No- 1 & 2, Sector 18, Sanpada, Navi Mumbai, Maharashtra - 400705",
     },
 
     contact: {
@@ -325,13 +325,13 @@ export const officeLocations = [
       longitude: null,
 
       googleMapsUrl:
-        "https://www.google.com/maps/search/?api=1&query=5th+Floor+Office+No+503+Bhumiraj+Costarica+Plot+No+1+and+2+Sector+18+Sanpada+Navi+Mumbai+Maharashtra+400705",
+        "https://www.google.com/maps/search/?api=1&query=9th+Floor+Office+No+907+Bhumiraj+Costarica+Plot+No+1+and+2+Sector+18+Sanpada+Navi+Mumbai+Maharashtra+400705",
 
       googleMapsEmbedUrl:
-        "https://www.google.com/maps?q=5th+Floor+Office+No+503+Bhumiraj+Costarica+Plot+No+1+and+2+Sector+18+Sanpada+Navi+Mumbai+Maharashtra+400705&output=embed",
+        "https://www.google.com/maps?q=9th+Floor+Office+No+907+Bhumiraj+Costarica+Plot+No+1+and+2+Sector+18+Sanpada+Navi+Mumbai+Maharashtra+400705&output=embed",
 
       directionsUrl:
-        "https://www.google.com/maps/dir/?api=1&destination=5th+Floor+Office+No+503+Bhumiraj+Costarica+Plot+No+1+and+2+Sector+18+Sanpada+Navi+Mumbai+Maharashtra+400705",
+        "https://www.google.com/maps/dir/?api=1&destination=9th+Floor+Office+No+907+Bhumiraj+Costarica+Plot+No+1+and+2+Sector+18+Sanpada+Navi+Mumbai+Maharashtra+400705",
 
       nearbyLandmarks: [
         "Bhumiraj Costarica",
@@ -408,7 +408,7 @@ export const officeLocations = [
         "Advocate Office in Navi Mumbai | Shrinivas Talawar",
 
       description:
-        "Office and appointment information for Advocate Shrinivas Talawar in Navi Mumbai, Maharashtra.",
+        "Office and appointment information for Advocate Shrinivas Talawar at Bhumiraj Costarica, Sector 18, Sanpada, Navi Mumbai, Maharashtra.",
 
       canonicalPath: "/offices/navi-mumbai",
 
@@ -421,6 +421,8 @@ export const officeLocations = [
         "property lawyer in Navi Mumbai",
         "Section 138 advocate in Navi Mumbai",
         "legal advice in Navi Mumbai",
+        "advocate in Sanpada",
+        "lawyer in Sanpada Navi Mumbai",
       ],
     },
 
@@ -583,7 +585,7 @@ export const officeLocations = [
 
     seo: {
       title:
-        "Advocate Office in Pune | Shrinivas Talawar",
+        "Advocate Office in Pimpri-Chinchwad | Shrinivas Talawar",
 
       description:
         "Office and appointment information for Advocate Shrinivas Talawar in Tathawade, Pimpri-Chinchwad, Pune, Maharashtra.",
@@ -599,6 +601,9 @@ export const officeLocations = [
         "property lawyer in Pune",
         "Section 138 advocate in Pune",
         "legal advice in Pune",
+        "advocate office in Pimpri-Chinchwad",
+        "lawyer in Tathawade",
+        "advocate in Tathawade Pune",
       ],
     },
 

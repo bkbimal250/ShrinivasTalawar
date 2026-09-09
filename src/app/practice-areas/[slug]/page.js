@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import {
+  Award,
   FileCheck2,
   FileSearch,
   Info,
+  Scale,
 } from "lucide-react";
 
 import PracticeAreaHeader from "@/components/practice/PracticeAreaHeader";
@@ -18,6 +20,8 @@ import {
 import {
   createPracticeAreaMetadata,
 } from "@/lib/metadata";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getPracticeAreaSlugs().map((slug) => ({
@@ -204,10 +208,39 @@ export default async function PracticeAreaPage({
               </div>
             </article>
 
-            <ContactCard
-              title="Discuss Appointment Availability"
-              compact
-            />
+            <aside className="practice-area-sidebar">
+              <div className="card card-padding card-gold-top">
+                <span className="eyebrow">Practice Summary</span>
+                <h2 className="heading-three">
+                  {practiceArea.highlight || practiceArea.title}
+                </h2>
+
+                <div className="practice-area-summary-list">
+                  {practiceArea.caseSolved && (
+                    <div className="practice-area-summary-item">
+                      <Award size={20} aria-hidden="true" />
+                      <span>
+                        <strong>{practiceArea.caseSolved}+</strong>
+                        <small>Cases Solved</small>
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="practice-area-summary-item">
+                    <Scale size={20} aria-hidden="true" />
+                    <span>
+                      <strong>{practiceArea.matters.length}</strong>
+                      <small>Matter Types Covered</small>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <ContactCard
+                title="Discuss Appointment Availability"
+                compact
+              />
+            </aside>
           </div>
         </Container>
       </section>

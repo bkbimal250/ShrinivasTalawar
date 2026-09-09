@@ -111,12 +111,26 @@ export function createPracticeAreaMetadata(practiceArea) {
         });
     }
 
-    return createMetadata({
+    const metadata = createMetadata({
         title: practiceArea.metaTitle || practiceArea.title,
         description: practiceArea.metaDescription,
         pathname: `/practice-areas/${practiceArea.slug}`,
         keywords: practiceArea.keywords || [],
     });
+
+    return {
+        ...metadata,
+        category: "Legal Service",
+        other: {
+            "practice-area": practiceArea.title,
+            "service-location": "Chhatrapati Sambhajinagar, Maharashtra",
+            ...(practiceArea.caseSolved
+                ? {
+                    "cases-solved": `${practiceArea.caseSolved}+`,
+                }
+                : {}),
+        },
+    };
 }
 
 export function createArticleMetadata({
@@ -179,12 +193,14 @@ export const practiceAreasMetadata = createMetadata({
 export const contactMetadata = createMetadata({
     title: "Office and Contact Information",
     description:
-        "Office address, telephone number, availability and appointment information for Advocate Shrinivas Talawar in Padampura, Chhatrapati Sambhajinagar.",
+        "Office addresses, telephone numbers, availability and appointment information for Advocate Shrinivas Talawar in Chhatrapati Sambhajinagar, Navi Mumbai and Pimpri-Chinchwad.",
     pathname: "/contact",
     keywords: [
         "Advocate Shrinivas Talawar contact",
         "advocate office Padampura",
         "lawyer near State Consumer Forum Aurangabad",
+        "advocate office Navi Mumbai",
+        "advocate office Pimpri-Chinchwad",
     ],
 });
 

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import {
   Accessibility,
+  ArrowRight,
+  Award,
   BadgeIndianRupee,
   Building2,
   FileText,
@@ -36,71 +38,55 @@ export default function PracticeAreaCard({
 
   const IconComponent =
     iconComponents[practiceArea.icon] || Landmark;
+  const caseSolved =
+    typeof practiceArea.caseSolved === "number"
+      ? `${practiceArea.caseSolved}+`
+      : null;
 
   return (
     <article
-      className={`card card-hover card-gold-top ${className}`.trim()}
+      className={`card card-hover card-gold-top practice-area-card ${
+        compact ? "practice-area-card-compact" : ""
+      } ${className}`.trim()}
     >
-      <div
-        className="card-padding"
-        style={{
-          display: "flex",
-          minHeight: compact ? "100%" : "320px",
-          flexDirection: "column",
-        }}
-      >
-        <span
-          aria-hidden="true"
-          style={{
-            display: "grid",
-            width: compact ? "48px" : "56px",
-            height: compact ? "48px" : "56px",
-            marginBottom: "var(--space-5)",
-            placeItems: "center",
-            border: "1px solid var(--color-gold-300)",
-            borderRadius: "var(--radius-circle)",
-            backgroundColor: "var(--color-gold-100)",
-            color: "var(--color-gold-700)",
-          }}
-        >
-          <IconComponent size={compact ? 22 : 26} />
-        </span>
+      <div className="card-padding practice-area-card-inner">
+        <div className="practice-area-card-top">
+          <span className="practice-area-card-icon" aria-hidden="true">
+            <IconComponent size={compact ? 22 : 26} />
+          </span>
+
+          {caseSolved && (
+            <span className="practice-area-card-stat">
+              <Award size={16} aria-hidden="true" />
+              <span>
+                <strong>{caseSolved}</strong>
+                <small>Cases Solved</small>
+              </span>
+            </span>
+          )}
+        </div>
 
         <h2
-          className="heading-three"
-          style={{
-            marginBottom: "var(--space-4)",
-          }}
+          className="heading-three practice-area-card-title"
         >
           <Link
             href={`/practice-areas/${practiceArea.slug}`}
-            style={{
-              color: "inherit",
-              textDecoration: "none",
-            }}
           >
             {practiceArea.title}
           </Link>
         </h2>
 
-        <p
-          className="text-muted"
-          style={{
-            marginBottom: "var(--space-6)",
-          }}
-        >
+        <p className="text-muted practice-area-card-description">
           {practiceArea.shortDescription}
         </p>
 
         <Link
           href={`/practice-areas/${practiceArea.slug}`}
-          className="link-arrow"
+          className="button button-primary practice-area-card-button"
           aria-label={`Read professional information about ${practiceArea.title}`}
-          style={{
-            marginTop: "auto",
-          }}
         >
-          View information
+          <span>View information</span>
+          <ArrowRight size={17} aria-hidden="true" />
         </Link>
       </div>
     </article>

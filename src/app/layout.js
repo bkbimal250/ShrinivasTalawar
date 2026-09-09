@@ -15,6 +15,16 @@ export const metadata = {
   },
   description: DEFAULT_DESCRIPTION,
   manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      {
+        url: "/favico.ico",
+        type: "image/x-icon",
+      },
+    ],
+    shortcut: "/favico.ico",
+    apple: "/favico.ico",
+  },
 };
 
 export default function RootLayout({ children }) {

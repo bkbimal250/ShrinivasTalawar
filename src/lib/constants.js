@@ -14,7 +14,7 @@ export const DEFAULT_TITLE =
 export const TITLE_TEMPLATE = "%s | Advocate Shrinivas Talawar";
 
 export const DEFAULT_DESCRIPTION =
-    "Professional profile of Advocate Shrinivas Talawar, handling civil, criminal, family, property, DRT and documentation matters in Chhatrapati Sambhajinagar, Maharashtra.";
+    "Professional profile of Advocate Shrinivas Talawar, handling civil, criminal, family, property, DRT and documentation matters with office information for Chhatrapati Sambhajinagar, Navi Mumbai and Pimpri-Chinchwad, Maharashtra.";
 
 export const DEFAULT_KEYWORDS = [
     "Advocate Shrinivas Talawar",
@@ -30,6 +30,10 @@ export const DEFAULT_KEYWORDS = [
     "DRT advocate in Chhatrapati Sambhajinagar",
     "legal documentation advocate in Aurangabad",
     "POCSO case advocate in Chhatrapati Sambhajinagar",
+    "advocate office in Navi Mumbai",
+    "lawyer in Sanpada Navi Mumbai",
+    "advocate office in Pimpri-Chinchwad",
+    "lawyer in Tathawade Pune",
 ];
 
 export const DEFAULT_OG_IMAGE = "/images/gallery/og-cover.webp";
@@ -67,8 +71,8 @@ export const GOOGLE_MAPS_URL =
     "https://www.google.com/maps/search/?api=1&query=Surya+Apartment+Samadhan+Colony+Padampura+Chhatrapati+Sambhajinagar+Maharashtra+431001";
 
 export const SOCIAL_LINKS = {
-    facebook: null,
-    instagram: null,
+    facebook: "https://www.facebook.com/shrinivas.talawar/",
+    instagram: "https://www.instagram.com/shrinivastalawar",
     linkedin: null,
     youtube: null,
 };

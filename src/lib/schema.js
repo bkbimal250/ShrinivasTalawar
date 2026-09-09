@@ -2,10 +2,13 @@ import {
     BUSINESS_HOURS,
     CONTACT,
     DEFAULT_DESCRIPTION,
+    GOOGLE_MAPS_URL,
     OFFICE_ADDRESS,
     SITE_NAME,
     SITE_URL,
+    SOCIAL_LINKS,
 } from "@/lib/constants";
+import { getPublishedOfficeLocations } from "@/data/officeLocation";
 
 function getAbsoluteUrl(pathname = "/") {
     if (!pathname || pathname === "/") {
@@ -20,6 +23,8 @@ function getAbsoluteUrl(pathname = "/") {
 }
 
 export function createAttorneySchema() {
+    const publishedOffices = getPublishedOfficeLocations();
+
     return {
         "@context": "https://schema.org",
         "@type": ["LegalService", "Attorney"],
@@ -28,6 +33,7 @@ export function createAttorneySchema() {
         name: SITE_NAME,
         description: DEFAULT_DESCRIPTION,
         url: SITE_URL,
+        hasMap: GOOGLE_MAPS_URL,
 
         telephone: CONTACT.phoneValue,
 
@@ -45,6 +51,15 @@ export function createAttorneySchema() {
                 "@type": "City",
                 name: "Chhatrapati Sambhajinagar",
                 alternateName: "Aurangabad",
+            },
+            {
+                "@type": "City",
+                name: "Navi Mumbai",
+            },
+            {
+                "@type": "City",
+                name: "Pimpri-Chinchwad",
+                alternateName: "Pune",
             },
             {
                 "@type": "AdministrativeArea",
@@ -98,7 +113,35 @@ export function createAttorneySchema() {
             availableLanguage: ["English", "Hindi", "Marathi"],
         },
 
-        sameAs: [],
+        department: publishedOffices.map((office) => ({
+            "@type": ["LegalService", "Attorney"],
+            "@id": `${SITE_URL}/offices/${office.slug}#office`,
+            name: `${office.advocateName} - ${office.name}`,
+            url: `${SITE_URL}/offices/${office.slug}`,
+            telephone: office.contact.phoneValue,
+            hasMap: office.location.googleMapsUrl,
+            address: {
+                "@type": "PostalAddress",
+                streetAddress: office.address.streetAddress,
+                addressLocality: office.city,
+                addressRegion: office.state,
+                postalCode: office.postalCode,
+                addressCountry: office.countryCode,
+            },
+            ...(office.availability.weeklyHours.length
+                ? {
+                    openingHoursSpecification:
+                        office.availability.weeklyHours.map((item) => ({
+                            "@type": "OpeningHoursSpecification",
+                            dayOfWeek: `https://schema.org/${item.day}`,
+                            opens: item.opens,
+                            closes: item.closes,
+                        })),
+                }
+                : {}),
+        })),
+
+        sameAs: Object.values(SOCIAL_LINKS).filter(Boolean),
     };
 }
 
@@ -163,27 +206,70 @@ export function createPracticeAreaSchema(practiceArea) {
     const pageUrl = getAbsoluteUrl(
         `/practice-areas/${practiceArea.slug}`
     );
+    const pageTitle = practiceArea.metaTitle || practiceArea.title;
+    const pageDescription =
+        practiceArea.metaDescription || practiceArea.shortDescription;
+    const serviceId = `${pageUrl}#service`;
+    const webpageId = `${pageUrl}#webpage`;
 
-    return {
-        "@context": "https://schema.org",
+    const webpageSchema = {
+        "@type": "WebPage",
+        "@id": webpageId,
+        name: pageTitle,
+        description: pageDescription,
+        url: pageUrl,
+        inLanguage: "en-IN",
+        isPartOf: {
+            "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+            "@id": serviceId,
+        },
+        primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: getAbsoluteUrl("/images/gallery/og-cover.webp"),
+        },
+        mainEntity: {
+            "@id": serviceId,
+        },
+    };
+
+    const serviceSchema = {
         "@type": "Service",
 
-        "@id": `${pageUrl}#service`,
+        "@id": serviceId,
         name: practiceArea.title,
-        description: practiceArea.shortDescription,
+        alternateName: practiceArea.menuTitle || practiceArea.title,
+        description: pageDescription,
         url: pageUrl,
 
         serviceType: practiceArea.title,
+        category: "Legal Service",
+        keywords: practiceArea.keywords || [],
+        mainEntityOfPage: {
+            "@id": webpageId,
+        },
 
         provider: {
             "@id": `${SITE_URL}/#legal-service`,
         },
 
-        areaServed: {
-            "@type": "City",
-            name: "Chhatrapati Sambhajinagar",
-            alternateName: "Aurangabad",
-        },
+        areaServed: [
+            {
+                "@type": "City",
+                name: "Chhatrapati Sambhajinagar",
+                alternateName: "Aurangabad",
+            },
+            {
+                "@type": "City",
+                name: "Navi Mumbai",
+            },
+            {
+                "@type": "City",
+                name: "Pimpri-Chinchwad",
+                alternateName: "Pune",
+            },
+        ],
 
         availableChannel: [
             {
@@ -193,6 +279,48 @@ export function createPracticeAreaSchema(practiceArea) {
                 },
             },
         ],
+
+        audience: {
+            "@type": "Audience",
+            geographicArea: {
+                "@type": "AdministrativeArea",
+                name: "Maharashtra",
+            },
+        },
+
+        ...(practiceArea.matters?.length
+            ? {
+                hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: `${practiceArea.title} matters`,
+                    itemListElement: practiceArea.matters.map((matter) => ({
+                        "@type": "Offer",
+                        itemOffered: {
+                            "@type": "Service",
+                            name: matter,
+                        },
+                    })),
+                },
+                knowsAbout: practiceArea.matters,
+            }
+            : {}),
+
+        ...(practiceArea.caseSolved
+            ? {
+                additionalProperty: [
+                    {
+                        "@type": "PropertyValue",
+                        name: "Cases Solved",
+                        value: `${practiceArea.caseSolved}+`,
+                    },
+                ],
+            }
+            : {}),
+    };
+
+    return {
+        "@context": "https://schema.org",
+        "@graph": [webpageSchema, serviceSchema],
     };
 }
 
@@ -228,13 +356,29 @@ export function createFAQSchema(faqs = []) {
 }
 
 export function createContactPageSchema() {
-    return createWebPageSchema({
+    const publishedOffices = getPublishedOfficeLocations();
+    const schema = createWebPageSchema({
         title: "Office and Contact Information",
         description:
             "Office address, telephone number and appointment information for Advocate Shrinivas Talawar.",
         pathname: "/contact",
         type: "ContactPage",
     });
+
+    return {
+        ...schema,
+        mainEntity: {
+            "@type": "ItemList",
+            name: "Office Locations",
+            numberOfItems: publishedOffices.length,
+            itemListElement: publishedOffices.map((office, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: office.name,
+                item: `${SITE_URL}/offices/${office.slug}`,
+            })),
+        },
+    };
 }
 
 export function serializeSchema(schema) {

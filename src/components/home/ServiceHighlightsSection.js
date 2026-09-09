@@ -7,6 +7,7 @@ import {
 
 import ButtonLink from "@/components/ui/ButtonLink";
 import Container from "@/components/ui/Container";
+import { practiceAreas } from "@/data/practiceAreas";
 import officeImage from "../../../public/images/gallery/office-reception.jpeg";
 import cabinImage from "../../../public/images/gallery/cabin1.jpeg";
 import meetingImage from "../../../public/images/gallery/indoor.jpeg";
@@ -19,6 +20,8 @@ const highlights = [
     alt: "Office reception area for professional legal consultations",
     icon: Landmark,
     href: "/practice-areas/civil-law",
+    practiceAreaSlugs: ["civil-law", "property-disputes"],
+    focus: "Civil, property and possession disputes",
   },
   {
     title: "Criminal and family proceedings",
@@ -28,6 +31,8 @@ const highlights = [
     icon: Scale,
     href: "/practice-areas/criminal-law",
     reverse: true,
+    practiceAreaSlugs: ["criminal-law", "family-law"],
+    focus: "Court process and confidential guidance",
   },
   {
     title: "Documentation, Section 138 and DRT matters",
@@ -36,8 +41,22 @@ const highlights = [
     alt: "Advocate cabin and document review area",
     icon: FileText,
     href: "/practice-areas/section-138-cheque-bounce",
+    practiceAreaSlugs: [
+      "legal-documentation",
+      "section-138-cheque-bounce",
+      "debt-recovery-tribunal",
+    ],
+    focus: "Documents, notices and financial records",
   },
 ];
+
+function getSolvedCases(slugs = []) {
+  return slugs.reduce((total, slug) => {
+    const practiceArea = practiceAreas.find((area) => area.slug === slug);
+
+    return total + (practiceArea?.caseSolved || 0);
+  }, 0);
+}
 
 export default function ServiceHighlightsSection() {
   return (
@@ -49,15 +68,44 @@ export default function ServiceHighlightsSection() {
         <div className="service-highlight-list">
           {highlights.map((item) => {
             const Icon = item.icon;
+            const solvedCases = getSolvedCases(item.practiceAreaSlugs);
+
             return (
-              <article key={item.title} className={`split-feature ${item.reverse ? "is-reverse" : ""}`}>
-                <div className="split-feature-copy">
-                  <span className="icon-box" aria-hidden="true">
-                    <Icon size={23} />
+              <article
+                key={item.title}
+                className={`split-feature service-highlight-item ${
+                  item.reverse ? "is-reverse" : ""
+                }`}
+              >
+                <div className="split-feature-copy service-highlight-copy">
+                  <div className="service-highlight-top">
+                    <span className="icon-box service-highlight-icon" aria-hidden="true">
+                      <Icon size={23} />
+                    </span>
+
+                    {solvedCases > 0 && (
+                      <span className="service-highlight-stat">
+                        <strong>{solvedCases}+</strong>
+                        <small>Cases Solved</small>
+                      </span>
+                    )}
+                  </div>
+
+                  <span className="service-highlight-focus">
+                    {item.focus}
                   </span>
+
                   <h2 className="heading-two text-balance">{item.title}</h2>
                   <p>{item.text}</p>
-                  <ButtonLink href={item.href} variant="outline" icon="arrow">
+
+                  <ButtonLink
+                    href={item.href}
+                    variant="primary"
+                    icon="arrow"
+                    fullWidth
+                    className="service-highlight-button"
+                    ariaLabel={`View information about ${item.title}`}
+                  >
                     View information
                   </ButtonLink>
                 </div>

@@ -4,12 +4,12 @@ import {
   MapPin,
   Monitor,
 } from "lucide-react";
-import Image from "next/image";
 
 import ButtonLink from "@/components/ui/ButtonLink";
 import Container from "@/components/ui/Container";
+import ImageCarousel from "@/components/ui/ImageCarousel";
 import advocate from "@/data/advocate";
-import heroImage from "../../../public/images/gallery/legal-office-hero.webp";
+import { heroImages } from "@/data/hero";
 
 const heroBadges = [
   { icon: Clock3, label: "Open 24 Hours" },
@@ -55,14 +55,11 @@ export default function HeroSection() {
         </div>
 
         <div className="home-hero-image-wrap animate-scale-in animation-delay-100">
-          <Image
-            src={heroImage}
-            alt="Professional legal office setting with law books and desk"
-            priority
-            width={900}
-            height={680}
-            sizes="(max-width: 767px) 100vw, 48vw"
-            className="framed-image"
+          <ImageCarousel
+            images={heroImages}
+            ariaLabel="Office and professional gallery"
+            className="hero-carousel"
+            priorityFirst
           />
         </div>
       </Container>

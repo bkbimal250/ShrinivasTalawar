@@ -3,7 +3,6 @@ import {
   Clock3,
   MapPin,
   Monitor,
-  Phone,
 } from "lucide-react";
 
 import Breadcrumb from "@/components/ui/Breadcrumb";
@@ -11,6 +10,7 @@ import ContactCard from "@/components/ui/ContactCard";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import advocate from "@/data/advocate";
+import { getPublishedOfficeLocations } from "@/data/officeLocation";
 import { contactMetadata } from "@/lib/metadata";
 import {
   createContactPageSchema,
@@ -21,6 +21,7 @@ export const metadata = contactMetadata;
 
 export default function ContactPage() {
   const contactPageSchema = createContactPageSchema();
+  const offices = getPublishedOfficeLocations();
 
   return (
     <main id="main-content">
@@ -95,7 +96,7 @@ export default function ContactPage() {
             <div>
               <SectionHeading
                 eyebrow="Contact Details"
-                title="Office in Padampura, Chhatrapati Sambhajinagar"
+                title="Confirmed office locations"
                 description="Appointment availability should be confirmed directly with the office before visiting."
               />
 
@@ -106,56 +107,55 @@ export default function ContactPage() {
                   marginTop: "var(--space-10)",
                 }}
               >
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "52px 1fr",
-                    gap: "var(--space-4)",
-                  }}
-                >
-                  <MapPin
-                    size={25}
-                    color="var(--color-gold-600)"
-                    aria-hidden="true"
-                  />
-
-                  <div>
-                    <h2 className="heading-three">
-                      Office Address
-                    </h2>
-
-                    <address className="text-muted">
-                      {advocate.address.fullAddress}
-                    </address>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "52px 1fr",
-                    gap: "var(--space-4)",
-                  }}
-                >
-                  <Phone
-                    size={24}
-                    color="var(--color-gold-600)"
-                    aria-hidden="true"
-                  />
-
-                  <div>
-                    <h2 className="heading-three">
-                      Telephone
-                    </h2>
-
-                    <a
-                      href={advocate.phone.href}
-                      className="link"
+                {offices.map((office) => (
+                  <article
+                    key={office.slug}
+                    className="card card-padding"
+                  >
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "52px 1fr",
+                        gap: "var(--space-4)",
+                      }}
                     >
-                      {advocate.phone.display}
-                    </a>
-                  </div>
-                </div>
+                      <MapPin
+                        size={25}
+                        color="var(--color-gold-600)"
+                        aria-hidden="true"
+                      />
+
+                      <div>
+                        <h2 className="heading-three">
+                          {office.name}
+                        </h2>
+
+                        <address
+                          className="text-muted"
+                          style={{
+                            marginTop: "var(--space-2)",
+                          }}
+                        >
+                          {office.address.fullAddress}
+                        </address>
+
+                        <p
+                          style={{
+                            marginTop: "var(--space-3)",
+                            marginBottom: 0,
+                          }}
+                        >
+                          <a
+                            href={office.contact.phoneHref}
+                            className="link"
+                          >
+                            {office.contact.phoneDisplay}
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
 
                 <div
                   style={{
@@ -176,7 +176,7 @@ export default function ContactPage() {
                     </h2>
 
                     <p className="text-muted">
-                      {advocate.availability.label}
+                      Primary office: {advocate.availability.label}
                     </p>
                   </div>
                 </div>

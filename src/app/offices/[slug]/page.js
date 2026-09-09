@@ -70,7 +70,7 @@ export default async function OfficeDetailsPage({
 
         "@id": `${SITE_URL}/offices/${office.slug}#office`,
 
-        name: `${office.advocateName} – ${office.name}`,
+        name: `${office.advocateName} - ${office.name}`,
         alternateName:
           office.alternateName || undefined,
 

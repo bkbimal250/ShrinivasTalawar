@@ -1,3 +1,26 @@
+export const trustStats = [
+    {
+        value: "200+",
+        label: "Cases Solved",
+        icon: "Gavel",
+    },
+    {
+        value: "10+",
+        label: "Practice Areas",
+        icon: "Scale",
+    },
+    {
+        value: "Professional",
+        label: "Legal Representation",
+        icon: "ShieldCheck",
+    },
+    {
+        value: "Client-Focused",
+        label: "Legal Assistance",
+        icon: "Users",
+    },
+];
+
 export const practiceAreas = [
     {
         id: 1,
@@ -5,6 +28,10 @@ export const practiceAreas = [
         title: "Civil Law",
         menuTitle: "Civil Law",
         icon: "Landmark",
+        badge: "200+ Cases Solved",
+        highlight: "Experienced Legal Representation",
+        priority: "high",
+        caseSolved: 200,
 
         shortDescription:
             "Legal assistance for civil disputes, civil rights matters, recovery proceedings and related litigation.",
@@ -22,6 +49,10 @@ export const practiceAreas = [
             "Small-claims matters",
             "Settlement discussions",
         ],
+        ctaTitle: "Discuss Your Civil Matter",
+        ctaText:
+            "Get professional guidance based on the facts, records and documents relevant to your civil matter.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Civil Advocate in Chhatrapati Sambhajinagar",
@@ -43,7 +74,10 @@ export const practiceAreas = [
         title: "Criminal Law",
         menuTitle: "Criminal Law",
         icon: "Shield",
-
+        badge: "Court Representation",
+        highlight: "Procedural Defence Support",
+        priority: "high",
+        caseSolved: 500,
         shortDescription:
             "Legal representation and assistance in criminal proceedings according to the facts and procedural stage of the matter.",
 
@@ -60,6 +94,10 @@ export const practiceAreas = [
             "Criminal appeals and revisions",
             "Case assessment and legal consultation",
         ],
+        ctaTitle: "Review Your Criminal Matter",
+        ctaText:
+            "Discuss the procedural stage, allegations, documents and available legal options for your matter.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Criminal Advocate in Chhatrapati Sambhajinagar",
@@ -81,6 +119,11 @@ export const practiceAreas = [
         title: "Family Law and Divorce Matters",
         menuTitle: "Family Law",
         icon: "Users",
+        badge: "Client-Focused Assistance",
+        highlight: "Sensitive Family-Matter Guidance",
+        priority: "high",
+
+        caseSolved: 300,
 
         shortDescription:
             "Legal assistance for family court proceedings, divorce matters and related family disputes.",
@@ -98,6 +141,10 @@ export const practiceAreas = [
             "Domestic dispute matters",
             "Family settlements",
         ],
+        ctaTitle: "Discuss Your Family-Law Matter",
+        ctaText:
+            "Get clear guidance for family court, divorce and related proceedings based on your circumstances.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Family Court and Divorce Advocate in Aurangabad",
@@ -120,7 +167,10 @@ export const practiceAreas = [
         title: "Property and Landlord-Tenant Disputes",
         menuTitle: "Property Disputes",
         icon: "Building2",
-
+        badge: "Core Practice Area",
+        highlight: "Property and Possession Matters",
+        priority: "high",
+        caseSolved: 400,
         shortDescription:
             "Legal assistance for property disputes, possession matters, landlord-tenant disagreements and eviction proceedings.",
 
@@ -137,6 +187,10 @@ export const practiceAreas = [
             "Injunction proceedings",
             "Property-related settlements",
         ],
+        ctaTitle: "Review Your Property Matter",
+        ctaText:
+            "Share the relevant title papers, agreements, notices and records for a structured legal assessment.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Property Dispute Advocate in Chhatrapati Sambhajinagar",
@@ -158,6 +212,10 @@ export const practiceAreas = [
         title: "Section 138 Cheque-Bounce Matters",
         menuTitle: "Cheque-Bounce Matters",
         icon: "FileWarning",
+        badge: "Statutory Timeline Matters",
+        highlight: "Cheque Dishonour Proceedings",
+        priority: "featured",
+        caseSolved: 450,
 
         shortDescription:
             "Legal assistance concerning cheque dishonour and proceedings under Section 138 of the Negotiable Instruments Act.",
@@ -175,6 +233,10 @@ export const practiceAreas = [
             "Settlement discussions",
             "Court representation",
         ],
+        ctaTitle: "Assess Your Cheque-Bounce Matter",
+        ctaText:
+            "Review notices, return memos, transaction records and timelines connected with Section 138 proceedings.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Section 138 Cheque-Bounce Advocate in Aurangabad",
@@ -196,6 +258,10 @@ export const practiceAreas = [
         title: "POCSO-Related Matters",
         menuTitle: "POCSO Matters",
         icon: "ShieldAlert",
+        badge: "Confidential Proceedings",
+        highlight: "Sensitive Criminal-Law Assistance",
+        priority: "featured",
+        caseSolved: 300,
 
         shortDescription:
             "Legal representation and procedural assistance in matters arising under the Protection of Children from Sexual Offences Act.",
@@ -213,6 +279,10 @@ export const practiceAreas = [
             "Case assessment",
             "Legal consultation",
         ],
+        ctaTitle: "Discuss a Sensitive Matter",
+        ctaText:
+            "Receive careful procedural guidance with attention to confidentiality, facts and the applicable legal framework.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "POCSO Case Advocate in Chhatrapati Sambhajinagar",
@@ -233,6 +303,10 @@ export const practiceAreas = [
         title: "Debt Recovery Tribunal Matters",
         menuTitle: "DRT Matters",
         icon: "BadgeIndianRupee",
+        badge: "Financial Recovery Matters",
+        highlight: "Tribunal and Recovery Proceedings",
+        priority: "high",
+        caseSolved: 500,
 
         shortDescription:
             "Legal assistance concerning debt-recovery proceedings and matters before the Debt Recovery Tribunal.",
@@ -250,6 +324,10 @@ export const practiceAreas = [
             "Settlement discussions",
             "Representation before the appropriate forum",
         ],
+        ctaTitle: "Review Your DRT Matter",
+        ctaText:
+            "Discuss notices, financial documents, secured assets and the procedural stage of the recovery matter.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "DRT Advocate in Chhatrapati Sambhajinagar",
@@ -271,6 +349,10 @@ export const practiceAreas = [
         title: "Legal Documentation and Advisory",
         menuTitle: "Legal Documentation",
         icon: "FileText",
+        badge: "Documentation & Advisory",
+        highlight: "Clear Legal Document Support",
+        priority: "featured",
+        caseSolved: 600,
 
         shortDescription:
             "Assistance with wills, agreements, legal documentation, business transactions, settlements and case assessments.",
@@ -288,6 +370,10 @@ export const practiceAreas = [
             "Case assessments",
             "General legal consultation",
         ],
+        ctaTitle: "Prepare or Review Documents",
+        ctaText:
+            "Get assistance with notices, agreements, wills, settlement documents and other legal documentation.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Legal Documentation Advocate in Chhatrapati Sambhajinagar",
@@ -309,6 +395,10 @@ export const practiceAreas = [
         title: "Customs-Related Matters",
         menuTitle: "Customs Matters",
         icon: "Ship",
+        badge: "Legal Advisory",
+        highlight: "Customs Notice and Documentation Review",
+        priority: "normal",
+        caseSolved: 300,
 
         shortDescription:
             "Legal assistance and case assessment for matters involving customs-related notices, documentation and proceedings.",
@@ -326,6 +416,10 @@ export const practiceAreas = [
             "Case assessment",
             "Legal consultation",
         ],
+        ctaTitle: "Assess Your Customs Matter",
+        ctaText:
+            "Review notices, declarations, transaction records and documents connected with customs-related proceedings.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Customs Matters Advocate in Chhatrapati Sambhajinagar",
@@ -346,6 +440,10 @@ export const practiceAreas = [
         title: "Workers' Compensation and Disability Benefits",
         menuTitle: "Compensation Matters",
         icon: "Accessibility",
+        badge: "Compensation Matters",
+        highlight: "Workplace and Disability-Benefit Claims",
+        priority: "normal",
+        caseSolved: 600,
 
         shortDescription:
             "Legal assistance concerning workers' compensation proceedings, workplace claims and disability-benefit matters.",
@@ -363,6 +461,10 @@ export const practiceAreas = [
             "Settlement proceedings",
             "Representation before the appropriate authority",
         ],
+        ctaTitle: "Discuss a Compensation Matter",
+        ctaText:
+            "Review employment records, medical documents and incident details for a structured legal assessment.",
+        ctaButton: "Book a Consultation",
 
         metaTitle:
             "Workers' Compensation Advocate in Aurangabad",

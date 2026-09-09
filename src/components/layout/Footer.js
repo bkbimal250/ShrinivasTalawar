@@ -1,15 +1,18 @@
 import Link from "next/link";
 import {
+  Camera,
   Clock3,
   MapPin,
   MessageCircle,
   Phone,
   Scale,
+  Share2,
 } from "lucide-react";
 
 import Container from "@/components/ui/Container";
 import advocate from "@/data/advocate";
 import { footerNavigation } from "@/data/navigation";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 const footerPracticeAreas = [
   { label: "Civil Law", href: "/practice-areas/civil-law" },
@@ -21,10 +24,23 @@ const footerPracticeAreas = [
 ];
 
 export default function Footer() {
+  const socialLinks = [
+    {
+      label: "Facebook",
+      href: SOCIAL_LINKS.facebook,
+      icon: Share2,
+    },
+    {
+      label: "Instagram",
+      href: SOCIAL_LINKS.instagram,
+      icon: Camera,
+    },
+  ].filter((item) => item.href);
+
   return (
     <footer className="site-footer">
       <Container className="footer-grid">
-        <section>
+        <section className="footer-about">
           <div className="footer-brand">
             <span className="brand-icon" aria-hidden="true">
               <Scale size={23} />
@@ -39,6 +55,27 @@ export default function Footer() {
             property, financial recovery and documentation-related matters in
             Chhatrapati Sambhajinagar, Maharashtra.
           </p>
+
+          {socialLinks.length > 0 && (
+            <div className="footer-social" aria-label="Social media links">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${item.label} profile`}
+                  >
+                    <Icon size={18} aria-hidden="true" />
+                    <span>{item.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+          )}
         </section>
 
         <nav aria-label="Footer practice areas">
