@@ -17,15 +17,15 @@ export const advocate = {
     ],
 
     phone: {
-        display: "+91 98220 51707",
-        value: "+919822051707",
-        href: "tel:+919822051707",
+        display: "+91 90499 01111 ",
+        value: "+919049901111",
+        href: "tel:+919049901111",
     },
 
     whatsapp: {
-        display: "+91 98220 51707",
-        value: "919822051707",
-        href: "https://wa.me/919822051707",
+        display: "+91 90499 01111 ",
+        value: "919049901111",
+        href: "https://wa.me/919049901111",
     },
 
     email: null,

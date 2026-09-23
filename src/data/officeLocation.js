@@ -70,13 +70,13 @@ export const officeLocations = [
     },
 
     contact: {
-      phoneDisplay: "+91 98220 51707",
-      phoneValue: "+919822051707",
-      phoneHref: "tel:+919822051707",
+      phoneDisplay: "+91 90499 01111 ",
+      phoneValue: "+919049901111",
+      phoneHref: "tel:+919049901111",
 
-      whatsappDisplay: "+91 98220 51707",
-      whatsappValue: "919822051707",
-      whatsappHref: "https://wa.me/919822051707",
+      whatsappDisplay: "+91 90499 01111 ",
+      whatsappValue: "919049901111",
+      whatsappHref: "https://wa.me/919049901111",
 
       email: null,
     },
@@ -479,13 +479,13 @@ export const officeLocations = [
     },
 
     contact: {
-      phoneDisplay: "+91 98220 51707",
-      phoneValue: "+919822051707",
-      phoneHref: "tel:+919822051707",
+      phoneDisplay: "+91 90499 01111 ",
+      phoneValue: "+919049901111",
+      phoneHref: "tel:+919049901111",
 
-      whatsappDisplay: "+91 98220 51707",
-      whatsappValue: "919822051707",
-      whatsappHref: "https://wa.me/919822051707",
+      whatsappDisplay: "+91 90499 01111 ",
+      whatsappValue: "919049901111",
+      whatsappHref: "https://wa.me/919049901111",
 
       email: null,
     },

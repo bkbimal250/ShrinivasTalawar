@@ -62,6 +62,8 @@ export default function HeroSection() {
             priorityFirst
           />
         </div>
+
+        
       </Container>
     </section>
   );

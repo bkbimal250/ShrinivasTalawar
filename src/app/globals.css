@@ -1406,6 +1406,39 @@ body.mobile-menu-open .mobile-only[aria-label="Quick contact options"] {
   object-fit: cover;
 }
 
+.image-carousel-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: min(850px, calc(100% - 120px));
+  padding: 12px 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+
+  background: rgba(7, 18, 33, 0.56);
+  color: rgba(255, 255, 255, 0.98);
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 12px 28px rgba(7, 18, 33, 0.22);
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
 
 /* =========================================
    ARROWS
@@ -1600,6 +1633,15 @@ body.mobile-menu-open .mobile-only[aria-label="Quick contact options"] {
     height: auto;
     aspect-ratio: 4 / 3;
     min-height: 280px;
+  }
+
+  .image-carousel-caption {
+    bottom: 16px;
+    max-width: calc(100% - 24px);
+    padding: 9px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    letter-spacing: 0.015em;
   }
 
   .image-carousel-prev,

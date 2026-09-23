@@ -39,12 +39,12 @@ export const DEFAULT_KEYWORDS = [
 export const DEFAULT_OG_IMAGE = "/images/gallery/og-cover.webp";
 
 export const CONTACT = {
-    phoneDisplay: "+91 98220 51707",
-    phoneValue: "+919822051707",
-    phoneHref: "tel:+919822051707",
+    phoneDisplay: "+91 90499 01111 ",
+    phoneValue: "+919049901111",
+    phoneHref: "tel:+919049901111",
 
-    whatsappValue: "919822051707",
-    whatsappHref: "https://wa.me/919822051707",
+    whatsappValue: "919049901111",
+    whatsappHref: "https://wa.me/919049901111",
 
     email: null,
 

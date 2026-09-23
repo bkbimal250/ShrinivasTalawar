@@ -142,6 +142,10 @@ export default function ImageCarousel({
               "
               className="image-carousel-image"
             />
+
+            {image.name && (
+              <div className="image-carousel-caption">{image.name}</div>
+            )}
           </div>
         ))}
       </div>
@@ -170,26 +174,7 @@ export default function ImageCarousel({
         <ChevronRight size={20} />
       </button>
 
-      <div className="image-carousel-actions" aria-label="Contact actions">
-        <a
-          className="image-carousel-action image-carousel-action-call"
-          href={advocate.phone.href}
-          aria-label="Call office"
-          onClick={pauseThenResume}
-        >
-          <Phone size={17} aria-hidden="true" />
-          <span>Call</span>
-        </a>
-        <a
-          className="image-carousel-action image-carousel-action-whatsapp"
-          href={advocate.whatsapp.href}
-          aria-label="Contact office on WhatsApp"
-          onClick={pauseThenResume}
-        >
-          <MessageCircle size={17} aria-hidden="true" />
-          <span>WhatsApp</span>
-        </a>
-      </div>
+     
 
       <div
         className="image-carousel-pagination"
