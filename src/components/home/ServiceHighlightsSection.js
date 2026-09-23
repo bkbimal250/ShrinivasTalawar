@@ -8,15 +8,13 @@ import {
 import ButtonLink from "@/components/ui/ButtonLink";
 import Container from "@/components/ui/Container";
 import { practiceAreas } from "@/data/practiceAreas";
-import officeImage from "../../../public/images/gallery/office-reception.jpeg";
-import cabinImage from "../../../public/images/gallery/cabin1.jpeg";
-import meetingImage from "../../../public/images/gallery/indoor.jpeg";
+
 
 const highlights = [
   {
     title: "Civil and property-related matters",
     text: "Civil proceedings, property documentation, possession issues and landlord-tenant matters require careful review of records and procedural position.",
-    image: officeImage,
+    image: "/images/gallery/hero1.jpeg",
     alt: "Office reception area for professional legal consultations",
     icon: Landmark,
     href: "/practice-areas/civil-law",
@@ -26,7 +24,7 @@ const highlights = [
   {
     title: "Criminal and family proceedings",
     text: "Sensitive matters are approached through factual assessment, document review and attention to the appropriate court process.",
-    image: meetingImage,
+    image: "/images/gallery/hero2.jpeg",
     alt: "Professional office environment for legal discussions",
     icon: Scale,
     href: "/practice-areas/criminal-law",
@@ -37,7 +35,7 @@ const highlights = [
   {
     title: "Documentation, Section 138 and DRT matters",
     text: "Notices, agreements, financial documents and tribunal-related records are reviewed according to the matter and applicable timelines.",
-    image: cabinImage,
+    image: "/images/gallery/hero3.jpeg",
     alt: "Advocate cabin and document review area",
     icon: FileText,
     href: "/practice-areas/section-138-cheque-bounce",
