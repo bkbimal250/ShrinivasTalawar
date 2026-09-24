@@ -14,6 +14,9 @@ export const metadata = {
     template: TITLE_TEMPLATE,
   },
   description: DEFAULT_DESCRIPTION,
+  verification: {
+    google: "0jpEFOOBafR03XOnUBuHenAEf3YZf1Y1drSslnnmi0U",
+  },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
