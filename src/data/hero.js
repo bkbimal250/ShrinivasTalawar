@@ -54,5 +54,13 @@ export const heroImages = [
     src: "/images/hero/hero9.jpeg",
     alt: "Advocate Shrinivas Talawar attending a legal program with Hon. Justice Branhe and Hon. Justice Khobragade",
   },
+  {
+    id: 10,
+    name:"With Sanjay Gangapurwala, Chief Justice of Madras High Court",
+    src: "/images/hero/hero10.jpeg",
+    alt: "With Sanjay Gangapurwala, Chief Justice of Madras High Court",
+
+  }
+ 
 ];
 

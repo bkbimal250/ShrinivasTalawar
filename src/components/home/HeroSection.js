@@ -60,6 +60,7 @@ export default function HeroSection() {
             ariaLabel="Office and professional gallery"
             className="hero-carousel"
             priorityFirst
+            
           />
         </div>
 

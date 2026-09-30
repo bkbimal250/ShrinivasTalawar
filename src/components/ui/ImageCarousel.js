@@ -140,6 +140,7 @@ export default function ImageCarousel({
                 (max-width: 1200px) 50vw,
                 600px
               "
+              loading="eager"
               className="image-carousel-image"
             />
 
